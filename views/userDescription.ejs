@@ -1,0 +1,27 @@
+<%- include ('partials/header.ejs'); %>
+<%- include ('partials/navbarhome.ejs'); %>
+
+<body>
+    <div class="container"> 
+        <h1 style="color: orangered;">User Description</h1>
+        <hr>
+        <div class="card">
+            <ul class="list-group">
+                <li class="list-group-item">ID: <%=data.id%></li>
+                <li class="list-group-item">LOGIN: <%=data.login%></li>
+                <li class="list-group-item">BIO: <%=data.bio%></li>
+                <li class="list-group-item">PUBLIC-REPOS: <%=data.public_repos%></li>
+                <li class="list-group-item">FOLLOWERS: <%=data.followers%></li>
+                <li class="list-group-item">FOLLOWING: <%=data.following%></li>
+                <li class="list-group-item">LOCATION: <%=data.location%></li>
+                <li class="list-group-item">COMPANY: <%=data.company%></li>
+                <li class="list-group-item">CREATED-AT: <%=data.created_at%></li>
+                <li class="list-group-item">UPDATE-AT: <%=data.updated_at%></li>
+              </ul>
+        </div>
+        <hr>
+    </div>     
+</body>
+
+<%- include ('partials/footer.ejs'); %>
+

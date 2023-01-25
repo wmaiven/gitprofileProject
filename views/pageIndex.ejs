@@ -1,0 +1,44 @@
+<%- include ('partials/header.ejs'); %>
+<%- include ('partials/navbarhome.ejs'); %>
+<body>
+    <div class="container">
+        <h2 style="color:orangered">Welcome to my project!</h2>
+        <hr />
+         
+        <br />
+              <div class="card">
+                  <table class="table">
+                    <thead>
+                        <tr>
+                            <td>id </td>
+                            <td>login</td>
+                            <td>actions</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(datas =>{ %>
+                            <tr>
+                                <td><%=datas.id%></td>
+                                <td><%=datas.login%></td>
+                                <td>
+                                    <a href="/<%=datas.login%>/description" class="btn btn-warning"> description</a>
+                                    <a href="/<%=datas.login%>/repos" class="btn btn-danger"> Repositories</a>
+                                </td>
+                            </tr>
+                        <%})%> 
+                    </tbody>
+                </table>
+              </div>
+        <div class="row">
+            <div class="col col-12">
+                <hr />
+                <a href='/<%=next%>' class="btn btn-warning" style="float:right">Next >>>></a>
+                <a href='/<%=back%> ' class="btn btn-warning" style="float:left"><<<< Back</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</body>
+
+<%- include ('partials/footer.ejs'); %>

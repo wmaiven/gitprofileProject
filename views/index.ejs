@@ -1,0 +1,52 @@
+<%- include ('partials/header.ejs'); %>
+<%- include ('partials/navbarhome.ejs'); %>
+<body>
+    <div class="container">
+        <h2 style="color:orangered">Welcome to my project!</h2>
+        <hr />
+         
+        <br />
+            
+            <label style="color: orangered;font-size: 20px;">Search a user profile</label>
+                <form method="post" style="display:inline;" action="/search/user" onsubmit="aviso(event,this)">
+                    <input type="text" name="id" placeholder="search a user" class="form-control"/>
+                    <br/>
+                    <button class="btn btn-danger">Search</button>
+                </form>
+                <hr>
+              <div class="card">
+                  <table class="table">
+                    <thead>
+                        <tr>
+                            <td>id </td>
+                            <td>login</td>
+                            <td>actions</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(datas =>{ %>
+                            <tr>
+                                <td><%=datas.id%></td>
+                                <td><%=datas.login%></td>
+                                <td>
+                                    <a href="/<%=datas.login%>/description" class="btn btn-warning"> description</a>
+                                    <a href="/<%=datas.login%>/repos" class="btn btn-danger"> Repositories</a>
+                                </td>
+                            </tr>
+                        <%})%> 
+                    </tbody>
+                </table>
+              </div>
+        <div class="row">
+            <div class="col col-12">
+                <hr />
+                <a href='/2' class="btn btn-warning" style="float:right">Next >>>></a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    
+</body>
+
+<%- include ('partials/footer.ejs'); %>
